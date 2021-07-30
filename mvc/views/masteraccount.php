@@ -14,7 +14,7 @@
 		
 
     </head>
-	<body>
+	<body style="background:#383636">
 		<!-- HEADER -->
 		<header>
 			<!-- TOP HEADER -->

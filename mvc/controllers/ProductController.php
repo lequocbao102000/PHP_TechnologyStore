@@ -15,12 +15,17 @@ class ProductController extends Controller{
     }
     function Products(){
         $list_brand = $this->mainmodel->getbrand();
-        $list_product = $this->productmodel->getproductfrombrand($_GET['brand']);
-        $this->view("masterproduct",[
-            "page"=>"product",
-            "listbr"=>$list_brand,
-            "listproduct"=>$list_product
-        ]);
+        if (isset($_GET['brand'])){
+            $list_product = $this->productmodel->getproductfrombrand($_GET['brand']);
+            $this->view("masterproduct",[
+                "page"=>"product",
+                "listbr"=>$list_brand,
+                "listproduct"=>$list_product
+            ]);
+        }
+        else{
+            header('Location:'.BASE_URL);
+        }
     }
 
     function Detail(){
@@ -31,6 +36,9 @@ class ProductController extends Controller{
                 "product"=>$product
                      
             ]);
+        }
+        else{
+            header('Location:'.BASE_URL);
         }
         
     }

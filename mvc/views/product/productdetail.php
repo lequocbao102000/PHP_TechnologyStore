@@ -38,7 +38,7 @@
 					<!-- Product details -->
 					<div class="col-md-5">
 						<div class="product-details">
-							<h2 style="color:white" class="product-name"><?php echo $row[0]['name'];?></h2>
+							<h2 class="product-name"><?php echo $row[0]['name'];?></h2>
 							<div>
 								<div class="product-rating">
 									<i class="fa fa-star"></i>
@@ -56,13 +56,16 @@
 							<p><?php echo $row[0]['description'];?></p>
 
                             </br></br></br>
-                            <form action="" method="POST">
+                            
                                 <div class="add-to-cart">
-                                    <input type="number" value="1" min="1" max="<?php echo $row[0]['stock'];?>" style="color:black;height:30px;font-size:20px" name="qty"> 
-                                    
-                                    <button style="margin-left:50px" class="add-to-cart-btn" name="btnaddcart"><i class="fa fa-shopping-cart"></i> add to cart</button>
+	
+                                <button style="margin-left:50px" class="add-to-cart-btn" name="btnaddcart">
+								<a href="<?php echo BASE_URL;?>/CartController/Cart?idcart=<?php echo $row[0]['id'];?>">
+									<i class="fa fa-shopping-cart"></i> add to cart
+								</a>
+								</button>
                                 </div>
-                            </form>
+                            
 
 
 						</div>

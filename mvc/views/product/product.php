@@ -71,7 +71,11 @@
 											</div>
 										</div>
 										<div class="add-to-cart">
-											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+											<button class="add-to-cart-btn">
+											<a href="'.BASE_URL.'/CartController/Cart?idcart='.$row[$i]['id'].'">
+											<i class="fa fa-shopping-cart"></i> add to cart
+											</a>
+											</button>
 										</div>
 									</div>
 								</div>';

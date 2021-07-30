@@ -10,7 +10,7 @@
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
 						<?php if (isset($_SESSION['name'])){
-							echo '<li><a href="'.BASE_URL.'/AccountController/Login/"><i class="fa fa-user-o"></i>'.$_SESSION['name'].'</a></li>';
+							echo '<li><a href=""><i class="fa fa-user-o"></i>'.$_SESSION['name'].'</a></li>';
 							echo '<a href="'.BASE_URL.'/AccountController/Logout/"> Click here to logout</a></li>';
 						}
 						else{
@@ -64,17 +64,24 @@
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Your Wishlist</span>
-										<div class="qty">2</div>
 									</a>
 								</div>
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
 								<div>
-									<a href="#">
+									<a href="<?php echo BASE_URL;?>/CartController/">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
-										<div class="qty">3</div>
+										<?php
+										 if (empty($_SESSION['cart']) || $_SESSION['cart']==null){
+											 $qtycart = 0;
+										 }
+										 else{
+											 $qtycart = count($_SESSION['cart']);
+										 }
+										?>
+										<div class="qty"><?php echo $qtycart;?></div>
 									</a>
 									
 								</div>

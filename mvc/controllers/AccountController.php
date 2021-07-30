@@ -86,6 +86,7 @@ class AccountController extends Controller{
     function Logout(){
         unset($_SESSION['username']);
         unset($_SESSION['name']);
+        unset($_SESSION['cart']);
         header ('Location:'.BASE_URL);
     }
 }
