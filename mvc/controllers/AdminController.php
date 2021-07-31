@@ -166,14 +166,13 @@ class AdminController extends Controller{
             if (isset($_POST['btneditproduct'])){
                 $name = $_POST['edit_name_product'];
                 $description = $_POST['edit_des_product'];
-                $image = $_FILES['edit_img_product']['name'];
+                $image = $_POST['edit_img_product'];
                 $price = $_POST['edit_price_product'];
                 $stock = $product[0]['stock'] + $_POST['edit_amount_product'];
                 $brand = $_POST['edit_type_brand_product'];
-                if ($this->adminmodel->editproduct($_GET['editproduct'],$name,$description,$image,$price,$stock,$brand)){
-                    $file = $_FILES['edit_img_product']['name'];
+                if ($this->adminmodel->editproduct($_GET['editproduct'],$name,$description,$image,$price,$stock,$brand)){                    
                     // move_uploaded_file($_FILES['edit_img_product']['tmp_name'],"uploads/".$file."");
-                    // echo "<script type='text/javascript'>alert('Edit Complete');</script>";
+                    echo "<script type='text/javascript'>alert('Edit Complete');</script>";
                 }
                 else{
                     echo "<script type='text/javascript'>alert('Edit Fail, please try again');</script>";

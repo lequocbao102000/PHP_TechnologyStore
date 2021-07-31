@@ -51,5 +51,14 @@ class CartController extends Controller{
             header ('Location:'.BASE_URL."/CartController/");
         }
     }
+
+    function UpdateCart(){
+        if (isset($_POST['btnupdatecart'])){
+            foreach($_POST['qty'] as $productId => $qty){
+                $_SESSION['cart'][$productId]['qty'] = $qty;
+            }
+        }
+        header ('Location:'.BASE_URL."/CartController/");
+    }
 }
 ?>

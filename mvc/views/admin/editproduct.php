@@ -20,7 +20,7 @@
 	</div>
 
     <div>
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form method="POST" action="">
              <div style="margin:auto;width:40%" class="panel panel-body">
                     <div class="form-group">
                         <label>Name Product</label>

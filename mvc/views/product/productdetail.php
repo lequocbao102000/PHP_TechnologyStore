@@ -53,7 +53,7 @@
 								<h3 class="product-price"><?php echo $row[0]['price'];?> $ </h3>
 								<span class="product-available">In Stock</span>
 							</div>
-							<p><?php echo $row[0]['description'];?></p>
+							<p style="color:black"><?php echo $row[0]['description'];?></p>
 
                             </br></br></br>
                             
