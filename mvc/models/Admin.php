@@ -120,7 +120,7 @@ class Admin extends DB{
     }
 
     public function getallreceipt(){
-        $query = 'select account.fullname,receipt.created_at,receipt.address,receipt.total FROM receipt INNER JOIN account ON receipt.username=account.username';
+        $query = 'select receipt.id, account.fullname,receipt.created_at,receipt.address,receipt.total FROM receipt INNER JOIN account ON receipt.username=account.username';
         $rows = mysqli_query($this->connect, $query);
         $mang=[];
         while ($row = mysqli_fetch_array($rows)){

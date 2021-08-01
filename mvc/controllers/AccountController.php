@@ -89,5 +89,17 @@ class AccountController extends Controller{
         unset($_SESSION['cart']);
         header ('Location:'.BASE_URL);
     }
+
+    function User(){
+        if (isset($_SESSION['username'])){
+            $history = $this->accountmodel->userhistory($_SESSION['username']);
+            $this->view("user",[
+                "historyreceipt"=>$history
+            ]); 
+        }
+        else{
+            header ('Location: '.BASE_URL."/AccountController/Login/");
+        }
+    }
 }
 ?>

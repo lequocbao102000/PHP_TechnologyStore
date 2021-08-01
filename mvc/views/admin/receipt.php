@@ -30,7 +30,7 @@
                                     <td>'.$row[$i]['address'].'</td>
                                     <td>'.$row[$i]['total'].'</td>
                                     <td>
-                                    <a href="#">
+                                    <a href="'.BASE_URL.'/AdminController/Details?idre='.$row[$i]['id'].'">
                                     <button class="btn btn-primary">Detail</button>
                                     </td>   
                                     </a>

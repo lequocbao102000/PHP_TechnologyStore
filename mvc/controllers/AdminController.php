@@ -1,9 +1,10 @@
 <?php
 class AdminController extends Controller{
     public $adminmodel;
+    public $accountmodel;
     function __construct(){
         $this->adminmodel=$this->model('Admin');
-        
+        $this->accountmodel=$this->model("Account");
         if (isset($_SESSION['username'])){
             if ($_SESSION['username']!="admin"){
                 header('Location: '.BASE_URL);
@@ -199,6 +200,19 @@ class AdminController extends Controller{
             ]);
         }
             
+    }
+
+    function Details(){
+        if (isset($_GET['idre'])){
+            $list_details = $this->accountmodel->userreceipt_details($_GET['idre']);
+            $this->view("masteradmin",[
+                "admin"=>"receiptdetails",
+                "detail"=>$list_details
+             ]);
+        }
+            else{
+                header ('Location:'.BASE_URL."/AdminController/ReceiptManage");
+            }
     }
     
 }
